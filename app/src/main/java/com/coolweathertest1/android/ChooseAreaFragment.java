@@ -108,7 +108,7 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(position);
                     queryCounties();
-                }else if (currentLevel == LEVEL_COUNTY) {
+                }else if (currentLevel == LEVEL_COUNTY) {          //从县级列表界面跳转到天气界面
                     String weatherId = countyList.get(position).getWeatherId();
                     //if (getActivity() instanceof MainActivity) {
                         Intent intent = new Intent(getActivity(), WeatherActivity.class);

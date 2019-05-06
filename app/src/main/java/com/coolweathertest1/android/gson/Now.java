@@ -2,6 +2,17 @@ package com.coolweathertest1.android.gson;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * JSON返回内容：
+ * "now":{
+ *     "tmp":"29",
+ *     "cond":{
+ *         "text":"阵雨"
+ *     }
+ * }
+ *
+ */
+
 public class Now {
 
     @SerializedName("tmp")

@@ -12,7 +12,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //加入缓存数据的判断
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        //先从缓存读取数据，如果不为null，就说明之前已经请求过天气数据了，没必要再次选择城市，
+        //而是直接跳转到WeatherActivity即可
         if (prefs.getString("weather", null) != null) {
             Intent intent = new Intent(this, WeatherActivity.class);
             startActivity(intent);
