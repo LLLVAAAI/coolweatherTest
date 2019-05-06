@@ -23,6 +23,7 @@ import com.bumptech.glide.Glide;
 import com.coolweathertest1.android.gson.Forecast;
 import com.coolweathertest1.android.gson.Weather;
 //import com.coolweathertest1.android.service.AutoUpdateService;
+import com.coolweathertest1.android.service.AutoUpdateService;
 import com.coolweathertest1.android.util.HttpUtil;
 import com.coolweathertest1.android.util.Utility;
 
@@ -220,8 +221,9 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
-//        Intent intent = new Intent(this, AutoUpdateService.class);
-//        startService(intent);
+        //启动后台自动更新天气服务，表示一旦选中了某个城市并更新了天气之后，系统 会一直在后台运行，并保证每半个小时更新一次天气
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
     /**
